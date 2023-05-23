@@ -1,17 +1,19 @@
 import asyncio
 import logging
-from config import TOKEN
+from config import TOKENmain
+from config import TOKENtest
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters.command import Command
 
 logging.basicConfig(level=logging.INFO)
-bot = Bot(TOKEN)
+bot = Bot(TOKENmain)
+#bot = Bot(TOKENtest)
 
 dp = Dispatcher()
 
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    await message.answer("Привет! Я - тестовый бот")
+    await message.answer("Привет!")
 
 @dp.message(Command("help"))
 async def cmd_start(message: types.Message):

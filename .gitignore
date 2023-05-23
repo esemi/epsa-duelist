@@ -1,0 +1,8 @@
+config.py
+*.pyc
+__pycache__
+.mypy_cache
+.pytest_cache
+venv
+.env
+.coverage
