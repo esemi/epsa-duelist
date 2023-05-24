@@ -1,13 +1,11 @@
 import asyncio
 import logging
 from config import TOKENmain
-from config import TOKENtest
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters.command import Command
 
 logging.basicConfig(level=logging.INFO)
 bot = Bot(TOKENmain)
-#bot = Bot(TOKENtest)
 
 dp = Dispatcher()
 
