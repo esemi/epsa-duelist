@@ -1,9 +1,9 @@
 # epsa-duelist
+TODO badges
 
 Telegram bot for calculating the opponent's move probability in the online game The Epsilion Wars.
 
-TODO badges
-TODO link to bot
+[Bot (staging)](https://t.me/rty_betabot)
 
 ## Local installation 
 
