@@ -39,5 +39,5 @@ $ poetry run flake8 app/
 ## Run telegram bot
 
 ```bash
-$ python -m app.bot_app
+$ python -m app.bot
 ```
