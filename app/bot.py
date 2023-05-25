@@ -15,7 +15,7 @@ async def cmd_start(message: types.Message):
 
 
 @dp.message_handler(filters.Command("help"))
-async def cmd_start(message: types.Message):
+async def cmd_help(message: types.Message):
     await message.answer("Тут будет помощь")
 
 
