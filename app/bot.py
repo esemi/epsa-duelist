@@ -2,39 +2,29 @@ import asyncio
 import logging
 
 from aiogram import Bot, Dispatcher, filters, types
-
+from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
 from app.settings import app_settings
-from aiogram.types import ReplyKeyboardRemove, \
-    ReplyKeyboardMarkup, KeyboardButton, \
-    InlineKeyboardMarkup, InlineKeyboardButton
 
 bot = Bot(app_settings.telegram_token)
 dp = Dispatcher(bot)
+manual = app_settings.manual
 
-@dp.message_handler(commands=['start'])
-async def cmd_start(message: types.Message):
+@dp.message_handler(filters.Command('start'))
+async def cmd_start(message: types.Message) -> None:
 
-    button_help = KeyboardButton(text="❓ Помощь", callback_data='help')
-    button_dev = KeyboardButton(text="⚙️ В разработкеe", callback_data='dev')
+    button_help = KeyboardButton(text="❓ Помощь")
+    button_dev = KeyboardButton(text="⚙️ В разработкеe")
     keyboard = ReplyKeyboardMarkup(resize_keyboard=True).add(button_help, button_dev)
 
     await message.answer("Добро пожаловать! Выберите фунуцию: ", reply_markup=keyboard)
 
-@dp.message_handler(filters.Command('help'))
+@dp.message_handler(filters.Command('help') | filters.Text(contains='❓ Помощь'))
 async def cmd_help(message: types.Message) -> None:
-    await message.answer('https://teletype.in/@w.a.i/alpha_bot_manual')
-
-@dp.message_handler(filters.Text(contains='❓ Помощь'))
-async def button_help(message: types.Message) -> None:
-    await message.answer('https://teletype.in/@w.a.i/alpha_bot_manual')
+    await message.answer(manual)
 
 @dp.message_handler(filters.Text(contains='⚙️ В разработке'))
-async def button_help(message: types.Message) -> None:
+async def button_dev(message: types.Message) -> None:
     await message.answer('⚙️')
-
-@dp.callback_query_handler(lambda c: c.data == "help" or c.data == "dev")
-async def send_callback(callback: types.CallbackQuery):
-    await callback.message.answer("Вы нажали кнопку!")
 
 async def main() -> None:
     await dp.start_polling(bot)
