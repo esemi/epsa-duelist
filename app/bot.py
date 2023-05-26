@@ -3,7 +3,7 @@ import logging
 
 from aiogram import Bot, Dispatcher, filters, types
 
-from settings import app_settings
+from app.settings import app_settings
 from aiogram.types import ReplyKeyboardRemove, \
     ReplyKeyboardMarkup, KeyboardButton, \
     InlineKeyboardMarkup, InlineKeyboardButton
