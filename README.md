@@ -1,32 +1,31 @@
 # epsa-duelist
+TODO badges
 
-Simple telegram bot for to calculate the opponent's moves in telegram's MMORPG
+Telegram bot for calculating the opponent's move probability in the online game The Epsilion Wars.
 
-## Local instalation 
+[Bot (staging)](https://t.me/rty_betabot)
+
+## Local installation 
 
 ```bash
 $ git clone https://github.com/esemi/epsa-duelist.git
-$ cd epsa-duelist/app
-$ python3 -m venv venv
+$ cd epsa-duelist
+$ python3.11 -m venv venv
 $ source venv/bin/activate
 $ pip install -U poetry pip setuptools
-$ poetry config virtualenvs.create false --local
 $ poetry install
 ```
 
 Create env file to override default config
-
 ```bash
 cat > .env << EOF
-throttling_time=2.0
-debug=true
 telegram_token=U_TELEGRAM_TOKEN
 EOF
 ```
 
 ## Run test
 
-```python
+```bash
 $ pytest --cov=app
 ```
 
@@ -37,14 +36,8 @@ $ poetry run mypy app/
 $ poetry run flake8 app/
 ```
 
-## Run background task
-
-```python
-python -m app.rates_update_task
-```
-
 ## Run telegram bot
 
-```python
-python -m app.bot_app
+```bash
+$ python -m app.bot
 ```
