@@ -1,6 +1,5 @@
 """Bot for telegram MMORPG."""
 
-import asyncio
 import logging
 
 from aiogram import Bot, Dispatcher, filters
@@ -57,3 +56,4 @@ async def main() -> None:
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
+    
