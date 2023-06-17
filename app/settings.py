@@ -9,7 +9,7 @@ class AppSettings(BaseSettings):
     """Application settings class."""
 
     telegram_token: str
-    manual = 'https://teletype.in/@w.a.i/alpha_bot_manual'
+    manual: str = 'https://teletype.in/@w.a.i/alpha_bot_manual'
 
 
 app_settings = AppSettings(

@@ -39,7 +39,7 @@ async def cmd_help(message: Message) -> None:
 
 
 @dp.message_handler(filters.Text(contains=DEV))
-async def button_dev(message: Message) -> None:
+async def dev_func(message: Message) -> None:
     """
     Handle the message, which contain 'DEV'.
 
