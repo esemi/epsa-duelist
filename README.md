@@ -5,7 +5,7 @@ Telegram bot for calculating the opponent's move probability in the online game 
 
 [Bot (staging)](https://t.me/rty_betabot)
 
-## Local installation 
+## Local installation
 
 ```bash
 $ git clone https://github.com/esemi/epsa-duelist.git
