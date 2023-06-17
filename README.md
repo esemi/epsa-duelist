@@ -20,7 +20,6 @@ Create env file to override default config
 ```bash
 cat > .env << EOF
 telegram_token=U_TELEGRAM_TOKEN
-manual=U_MANUAL_LINK
 EOF
 ```
 
